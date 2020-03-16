@@ -1,7 +1,7 @@
 import pymongo
 import dns
 
-client = pymongo.MongoClient("mongodb+srv://bigdom1023:homekeys92@dom-cluster-1numt.mongodb.net/test?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://bigdom1023:**********@dom-cluster-1numt.mongodb.net/test?retryWrites=true&w=majority")
 
 def get_dictionary_words():
     db = client.get_database("EnglishWords")
