@@ -27,6 +27,9 @@ class Hangman:
                 ascii_value = ord(letter)
                 if 65 <= ascii_value <= 90 or 97 <= ascii_value <= 122:
                     is_alphabetical = True
+                elif letter == "ˆ" or letter == "ƒ":
+                    is_alphabetical = False
+                    break
             if is_alphabetical:
                 self.word = random_word
                 getting_word = False
@@ -48,17 +51,17 @@ class Hangman:
 
     def is_guess_correct(self, guess):
         if len(guess) > 1 or not guess.isalpha():
-            print("INVALID GUESS")
+            #print("INVALID GUESS")
             return False
         if self.guessed_before(guess):
-            print("YOU HAVE ALREADY GUESSED THAT LETTER")
+            #print("YOU HAVE ALREADY GUESSED THAT LETTER")
             return False
         for letter in self.word:
             if guess == letter.lower() or letter == letter.upper():
-                print("CORRECT GUESS!")
+                #print("CORRECT GUESS!")
                 self.previous_guesses.append(guess)
                 return True
-        print("INCORRECT GUESS")
+        #print("INCORRECT GUESS")
         self.previous_guesses.append(guess)
         global GUESSES
         self.guesses = self.guesses - 1
@@ -76,14 +79,14 @@ class Hangman:
     def is_game_running(self):
         is_game_running = True
         if self.word == self.encrypted_word:
-            print("YOU WON!")
-            print("WORD: " + self.word)
+            #print("YOU WON!")
+            #print("WORD: " + self.word)
             self.win = True
             is_game_running = False
             return is_game_running
         if self.guesses == 0:
-            print("YOU LOST!")
-            print("CORRECT WORD: " + self.word)
+            #print("YOU LOST!")
+            #print("CORRECT WORD: " + self.word)
             is_game_running = False
             self.win = False
             return is_game_running
