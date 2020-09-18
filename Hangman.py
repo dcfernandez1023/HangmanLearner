@@ -1,4 +1,4 @@
-from HangmanML import MongoDB_Access as mongo
+import MongoDB_Access as mongo
 import random
 
 class Hangman:

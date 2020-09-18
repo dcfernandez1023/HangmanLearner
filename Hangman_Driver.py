@@ -1,6 +1,6 @@
-from HangmanML import Hangman
-from HangmanML import Hangman_Learner
-from HangmanML import MongoDB_Access as mongo
+import Hangman
+import Hangman_Learner
+import MongoDB_Access as mongo
 from tqdm import tqdm
 
 ##GLOBALS##
